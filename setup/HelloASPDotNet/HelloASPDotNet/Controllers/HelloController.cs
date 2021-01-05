@@ -76,8 +76,8 @@ namespace HelloASPDotNet.Controllers
         [HttpPost]   
         public IActionResult Welcome(string name = "World")
         {
-
-            string welcomeHtml = "<h1> Welcome to my app, " + name + "!</h1>";
+            List<string> greeting= new List<string> { };
+            string welcomeHtml = "<h1>" + greeting + name + "!</h1>";
             return Content(welcomeHtml, "text/html");
         }
     }
