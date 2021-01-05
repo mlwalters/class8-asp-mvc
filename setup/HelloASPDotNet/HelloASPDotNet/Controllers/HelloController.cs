@@ -49,24 +49,25 @@ namespace HelloASPDotNet.Controllers
     //}
 
     // CLASS LEVEL ROUTING, DRYing the code - to simplify code commented out above
-    [Route("/helloworld/")]     // since both method attributes (get and post) refer to the same route, this can be class level
+    [Route("/helloworld/")] // "helloworld/" also works  // since both method attributes (get and post) refer to the same route, this can be class level
     public class HelloController : Controller
     {
        
         [HttpGet]               
         public IActionResult Index()   
         {
-            string html = "<form method='post' action='/helloworld/'>" + 
-                "<input type='text' name='name' />" +
-                "<select name='language'>" +
-                "<option value='Hello '>English</option>" +
-                "<option value='Kamusta, '>Tagalog</option>" +
-                "<option value='Bonjour, '>French</option>" +
-                "<option value='Kon\'nichiwa '>Japanese</option>" +
-                "<option value='Hola '>Spanish</option>" +
-                "<option value='Salamu '>Swahili</option>" +
-                "</select>" +
-                "<input type='submit' value='Greet me!' />" +
+            string html = 
+                "<form method='post' action='/helloworld/'>" + 
+                    "<input type='text' name='name' />" +
+                    "<select name='language'>" +
+                        "<option value='english' selected>English</option>" +
+                        "<option value='tagalog'>Tagalog</option>" +
+                        "<option value='french'>French</option>" +
+                        "<option value='Konnichiwa '>Japanese</option>" +
+                        "<option value='Hola '>Spanish</option>" +
+                        "<option value='Salamu '>Swahili</option>" +
+                    "</select>" +
+                    "<input type='submit' value='Greet me!' />" +
                 "</form>";
 
             return Content(html, "text/html");
@@ -74,10 +75,28 @@ namespace HelloASPDotNet.Controllers
 
         [HttpGet("welcome/{name?}")] // to make welcome method respond to both get and post 
         [HttpPost]   
-        public IActionResult Welcome(string name = "World")
+        public IActionResult Welcome(string name = "World", string language)
         {
-            List<string> greeting= new List<string> { };
-            string welcomeHtml = "<h1>" + greeting + name + "!</h1>";
+            string hello = string.Empty;
+     
+
+              switch (language)
+            {
+                case "english":
+                    hello = "Hello, ";
+                    break;
+                case "tagalog":
+                    hello = "Kamusta, ";
+                    break;
+                case "french":
+                    hello = "Bonjour, ";
+                    break;
+                //default
+                //    hello = "Hi, ";
+
+            }
+
+            string welcomeHtml = "<h1>" + hello + name + "!</h1>";
             return Content(welcomeHtml, "text/html");
         }
     }
