@@ -60,12 +60,12 @@ namespace HelloASPDotNet.Controllers
                 "<form method='post' action='/helloworld/'>" + 
                     "<input type='text' name='name' />" +
                     "<select name='language'>" +
-                        "<option value='english' selected>English</option>" +
-                        "<option value='tagalog'>Tagalog</option>" +
-                        "<option value='french'>French</option>" +
-                        "<option value='Konnichiwa '>Japanese</option>" +
-                        "<option value='Hola '>Spanish</option>" +
-                        "<option value='Salamu '>Swahili</option>" +
+                        "<option value='Hello' selected>English</option>" +
+                        "<option value='Kamusta'>Tagalog</option>" +
+                        "<option value='Bonjour'>French</option>" +
+                        "<option value='Konnichiwa'>Japanese</option>" +
+                        "<option value='Hola'>Spanish</option>" +
+                        "<option value='Salamu'>Swahili</option>" +
                     "</select>" +
                     "<input type='submit' value='Greet me!' />" +
                 "</form>";
@@ -73,31 +73,13 @@ namespace HelloASPDotNet.Controllers
             return Content(html, "text/html");
         }
 
-        [HttpGet("welcome/{name?}")] // to make welcome method respond to both get and post 
-        [HttpPost]   
-        public IActionResult Welcome(string name = "World", string language)
+        //[HttpGet("welcome/{name?}")] // to make welcome method respond to both get and post 
+        [HttpPost]
+        public IActionResult Welcome(string language, string name = "World")
         {
-            string hello = string.Empty;
-     
+            string html = language + ", " + name + "!";
 
-              switch (language)
-            {
-                case "english":
-                    hello = "Hello, ";
-                    break;
-                case "tagalog":
-                    hello = "Kamusta, ";
-                    break;
-                case "french":
-                    hello = "Bonjour, ";
-                    break;
-                //default
-                //    hello = "Hi, ";
-
-            }
-
-            string welcomeHtml = "<h1>" + hello + name + "!</h1>";
-            return Content(welcomeHtml, "text/html");
+            return Content(html, "text/html");
         }
     }
 }
