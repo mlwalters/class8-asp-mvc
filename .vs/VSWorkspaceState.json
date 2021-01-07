@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\setup",
-    "\\setup\\HelloASPDotNet"
+    "\\setup\\HelloASPDotNet",
+    "\\Studio",
+    "\\Studio\\SkillsTracker"
   ],
-  "SelectedNode": "\\setup\\HelloASPDotNet\\HelloASPDotNet.sln",
+  "SelectedNode": "\\Studio\\SkillsTracker\\SkillsTracker.sln",
   "PreviewInSolutionExplorer": false
 }
