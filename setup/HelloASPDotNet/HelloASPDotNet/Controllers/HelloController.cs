@@ -56,30 +56,16 @@ namespace HelloASPDotNet.Controllers
         [HttpGet]               
         public IActionResult Index()   
         {
-            string html = 
-                "<form method='post' action='/helloworld/'>" + 
-                    "<input type='text' name='name' />" +
-                    "<select name='language'>" +
-                        "<option value='Hello' selected>English</option>" +
-                        "<option value='Kamusta'>Tagalog</option>" +
-                        "<option value='Bonjour'>French</option>" +
-                        "<option value='Konnichiwa'>Japanese</option>" +
-                        "<option value='Hola'>Spanish</option>" +
-                        "<option value='Salamu'>Swahili</option>" +
-                    "</select>" +
-                    "<input type='submit' value='Greet me!' />" +
-                "</form>";
-
-            return Content(html, "text/html");
+            return View();
         }
 
         //[HttpGet("welcome/{name?}")] // to make welcome method respond to both get and post 
         [HttpPost]
         public IActionResult Welcome(string language, string name = "World")
         {
-            string html = language + ", " + name + "!";
-
-            return Content(html, "text/html");
+            ViewBag.person = name;
+            ViewBag.language = language;
+            return View();
         }
     }
 }

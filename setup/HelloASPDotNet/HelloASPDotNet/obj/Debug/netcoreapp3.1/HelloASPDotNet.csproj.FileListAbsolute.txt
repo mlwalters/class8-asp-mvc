@@ -35,3 +35,5 @@ C:\Users\racir\source\repos\LaunchCode\csharpClass8ASPMVC\setup\HelloASPDotNet\H
 C:\Users\racir\source\repos\LaunchCode\csharpClass8ASPMVC\setup\HelloASPDotNet\HelloASPDotNet\obj\Debug\netcoreapp3.1\HelloASPDotNet.pdb
 C:\Users\racir\source\repos\LaunchCode\csharpClass8ASPMVC\setup\HelloASPDotNet\HelloASPDotNet\obj\Debug\netcoreapp3.1\HelloASPDotNet.genruntimeconfig.cache
 C:\Users\racir\source\repos\LaunchCode\csharpClass8ASPMVC\setup\HelloASPDotNet\HelloASPDotNet\obj\Debug\netcoreapp3.1\HelloASPDotNet.csproj.CopyComplete
+C:\Users\racir\source\repos\LaunchCode\csharpClass8ASPMVC\setup\HelloASPDotNet\HelloASPDotNet\obj\Debug\netcoreapp3.1\Razor\Views\Hello\Index.cshtml.g.cs
+C:\Users\racir\source\repos\LaunchCode\csharpClass8ASPMVC\setup\HelloASPDotNet\HelloASPDotNet\obj\Debug\netcoreapp3.1\Razor\Views\Hello\Welcome.cshtml.g.cs

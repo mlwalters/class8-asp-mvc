@@ -1,0 +1,16 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@if (ViewBag.person == null || ViewBag.person == "")
+{
+    <h1>@ViewBag.language World!</h1>
+}
+else
+{
+    <h1>@ViewBag.language, @ViewBag.person!</h1>
+}
+
